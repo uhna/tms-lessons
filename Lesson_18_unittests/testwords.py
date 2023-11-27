@@ -1,7 +1,7 @@
 import unittest
 from unittest.mock import patch
 
-from unittests.words import join_words, day_of_week, mocked_get
+from Lesson_18_unittests.words import join_words, day_of_week, mocked_get
 import requests
 
 class TestJoinWords(unittest.TestCase):
