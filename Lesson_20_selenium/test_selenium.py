@@ -17,8 +17,8 @@ class TestSelenium:
     def test_website(self, driver, url, page_title):
         driver.get(url)
         website_title = driver.title
-        assert website_title == page_title, f"Wrong title {page_title} of " \
-                                            f"website {website_title}"
         now_datetime = datetime.datetime.utcnow().strftime("%Y.%m.%d.%H.%M.%S")
         driver.save_screenshot(f"screenshot_{now_datetime}.png")
+        assert website_title == page_title, f"Wrong title {page_title} of " \
+                                            f"website {website_title}"
 
