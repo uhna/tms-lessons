@@ -1,8 +1,7 @@
-import datetime
-
 import pytest
 
 from selenium import webdriver
+
 
 @pytest.fixture
 def driver(request):
@@ -11,8 +10,6 @@ def driver(request):
     chrome_options.add_argument('--headless')
     driver = webdriver.Chrome(chrome_options)
     driver.maximize_window()
-    now_datetime = datetime.datetime.utcnow().strftime("%Y.%m.%d.%H.%M.%S")
-    driver.save_screenshot(f"screenshot_{now_datetime}.png")
     return driver
 
 

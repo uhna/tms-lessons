@@ -1,5 +1,5 @@
 import pytest
-
+import datetime
 # 1 - открывает в любом браузере* сайты https://www.amazon.com/, https://www.apple.com/, https://www.google.com/
 # 2 - Проверяет, что на сайте заголовке окна для сайта Амазона - Amazon, для Эпла - Apple, для Гугла - Google
 # 3 - тест должен быть параметризированным. Т.е. должны быть две переменные url и page_title, которые меняются
@@ -19,4 +19,6 @@ class TestSelenium:
         website_title = driver.title
         assert website_title == page_title, f"Wrong title {page_title} of " \
                                             f"website {website_title}"
+        now_datetime = datetime.datetime.utcnow().strftime("%Y.%m.%d.%H.%M.%S")
+        driver.save_screenshot(f"screenshot_{now_datetime}.png")
 
