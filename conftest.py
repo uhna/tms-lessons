@@ -4,8 +4,7 @@ from selenium import webdriver
 
 
 @pytest.fixture
-def driver(request):
-    # Инициализируйте веб-драйвер (Chrome)
+def driver():
     chrome_options = webdriver.ChromeOptions()
     chrome_options.add_argument('--headless')
     driver = webdriver.Chrome(chrome_options)
